@@ -43,18 +43,18 @@ if (game.ask("            yes buy", "    no i won't take it")) {
 } else {
     game.splash("come, on time for the next one.")
 }
-if (game.ask("yes", "no")) {
-    // changes how the librarian acts to you.
-    buyingBooksScore += 1
-} else {
-    game.splash("let's see what you bout.", "It's the intresting part!!")
-}
 game.splash("inferno volcanos!!")
 game.splash("ooh this must be about volcanos!!")
 game.splash("this can't be fiction")
 game.showLongText("volcanos are a source of hot real hot but have you ever wondered how they erupt well the earth is made out of not just a ball of land but 4 parts the innner core the outer core the mantle and the crust we live on the crust the core is the part thats hot real hot real real real hot and when enogth presure builds up in it it can burst open the crust making werever it comes up a slide up that is the shape of a volcano. there are a lot more facts but you don't need to read all of it now do you?", DialogLayout.Bottom)
 game.splash("if you read non-fiction you can learn new stuff!!", "this is non-fiction WOW!!!!")
 game.splash("do you wan't to buy the inferno volcanos?")
+if (game.ask("yes", "no")) {
+    // changes how the librarian acts to you.
+    buyingBooksScore += 1
+} else {
+    game.splash("let's see what you bout.", "It's the intresting part!!")
+}
 if (buyingBooksScore > 1) {
     scene.setBackgroundImage(img`
         ..........................ee...........e.........................ffffffffffffffffffffffff.......................................................................
@@ -179,7 +179,7 @@ if (buyingBooksScore > 1) {
         ....................................................................................................222.........................................................
         `)
     game.splash("congrats you helped the librarian!!!!!!!")
-    pause(5000)
+    pause(10000)
     game.over(true)
 } else {
     scene.setBackgroundImage(img`
@@ -305,5 +305,6 @@ if (buyingBooksScore > 1) {
         ................................................................................................................................................................
         `)
     game.splash("the librairian killed you for you'r mis-beahave-your.")
+    pause(10000)
     game.over(false)
 }
